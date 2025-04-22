@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Rắn Săn Mồi (Snake)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Rắn Săn Mồi</h1>
+    <div id="game-container">
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div id="ui-container">
+             <div id="score-board">Điểm: <span id="score">0</span></div>
+             <button id="startButton">Bắt đầu / Chơi lại</button>
+        </div>
+         <div id="instructions">Dùng phím mũi tên để điều khiển.</div>
+         <div id="game-over" class="hidden">GAME OVER!</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

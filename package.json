@@ -1,16 +1,24 @@
 {
-  "name": "mygame",
+  "name": "my-game-hub", // Tên dự án của bạn
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "next build", // Script build mặc định, sẽ tạo thư mục 'out' do cấu hình 'export'
+    "start": "next start", // Không dùng được khi đã export tĩnh
+    "lint": "next lint",
+    "deploy": "npm run build && gh-pages -d out" // Script để build và deploy lên nhánh gh-pages
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.1"
+    "next": "latest", // Sử dụng phiên bản Next.js mới nhất hoặc phiên bản bạn đang dùng
+    "react": "latest",
+    "react-dom": "latest"
+    // Thêm các dependencies khác của bạn ở đây
+  },
+  "devDependencies": {
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "gh-pages": "^6.1.1" // Bắt buộc: Package để deploy lên gh-pages (phiên bản có thể thay đổi)
+    // Thêm các devDependencies khác của bạn ở đây
   }
 }

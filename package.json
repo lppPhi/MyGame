@@ -1,24 +1,22 @@
 {
-  "name": "my-game-hub", 
+  "name": "my-game-hub",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build", 
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npm run build && gh-pages -d out" 
+    "deploy": "npm run build && gh-pages -d out"
   },
   "dependencies": {
-    "next": "latest", 
+    "next": "latest",
     "react": "latest",
     "react-dom": "latest"
-   
   },
   "devDependencies": {
     "eslint": "latest",
     "eslint-config-next": "latest",
-    "gh-pages": "^6.1.1" 
-
+    "gh-pages": "^6.3.0"
   }
 }

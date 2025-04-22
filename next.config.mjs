@@ -16,7 +16,7 @@ const nextConfig = {
   // --- Kết thúc cấu hình cho GitHub Pages ---
 };
 
-module.exports = nextConfig;
+export default nextConfig;
 
 // Lưu ý: Nếu bạn deploy trang người dùng/tổ chức (ví dụ: <username>.github.io)
 // hoặc sử dụng tên miền tùy chỉnh trỏ trực tiếp vào gốc repo,

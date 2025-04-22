@@ -1,0 +1,216 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f9; /* Màu nền nhẹ nhàng */
+}
+
+.main {
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px; /* Giới hạn chiều rộng nội dung */
+}
+
+.title {
+  margin: 0 0 1rem; /* Giảm margin dưới */
+  line-height: 1.15;
+  font-size: 3.5rem; /* Giảm cỡ chữ một chút */
+  text-align: center;
+  color: #333;
+}
+
+.description {
+  line-height: 1.5;
+  font-size: 1.3rem; /* Giảm cỡ chữ */
+  text-align: center;
+  margin-bottom: 2.5rem; /* Tăng khoảng cách dưới */
+  color: #555;
+}
+
+.grid {
+  display: flex;
+  align-items: stretch; /* Làm các card cao bằng nhau */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* Khoảng cách giữa các card */
+  width: 100%;
+}
+
+.card {
+  display: flex; /* Sắp xếp nội dung card theo cột */
+  flex-direction: column;
+  margin: 0; /* Bỏ margin cũ */
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  width: 100%; /* Chiếm toàn bộ chiều rộng trên mobile */
+  max-width: 350px; /* Giới hạn chiều rộng card trên desktop */
+  background-color: #ffffff; /* Nền trắng cho card */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #0070f3;
+  border-color: #0070f3;
+  transform: translateY(-3px); /* Hiệu ứng nhấc lên nhẹ */
+  box-shadow: 0 4px 10px rgba(0, 112, 243, 0.15);
+}
+
+.card h2 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.5rem;
+  line-height: 1.3; /* Đảm bảo không quá sát */
+}
+
+.card p {
+  margin: 0;
+  font-size: 1rem; /* Cỡ chữ mô tả */
+  line-height: 1.6;
+  flex-grow: 1; /* Đẩy phần mô tả xuống dưới nếu card có chiều cao khác nhau */
+  color: #444;
+}
+
+.gameEngine {
+   font-size: 0.9rem !important; /* Ghi đè size nếu cần */
+   color: #777 !important; /* Ghi đè màu */
+   margin-bottom: 0.5rem !important; /* Thêm khoảng cách dưới */
+   font-style: italic;
+}
+
+.imageWrapper {
+    width: 100%;
+    margin-bottom: 1rem; /* Khoảng cách giữa ảnh và text */
+    border-radius: 5px; /* Bo góc ảnh */
+    overflow: hidden; /* Đảm bảo ảnh không tràn viền */
+    aspect-ratio: 16 / 9; /* Giữ tỉ lệ ảnh preview */
+    background-color: #eee; /* Màu nền chờ ảnh load */
+}
+
+ /* Placeholder nếu không có ảnh */
+.placeholderImage {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+
+.footer {
+  width: 100%;
+  height: 80px; /* Giảm chiều cao footer */
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem; /* Thêm khoảng cách trên */
+  background-color: #fff;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem; /* Giảm gap trên mobile */
+  }
+  .title {
+     font-size: 2.8rem;
+  }
+  .description {
+     font-size: 1.1rem;
+  }
+   .card {
+     max-width: 100%; /* Card chiếm toàn bộ width trên mobile */
+   }
+}
+.gameView {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+  padding-top: 50px; /* Khoảng trống cho nút back */
+  position: relative; /* Để định vị nút back */
+  background-color: #222; /* Nền tối khi xem game */
+}
+
+.backButton {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  padding: 8px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  z-index: 10; /* Nằm trên iframe */
+  transition: background-color 0.2s ease;
+}
+
+.backButton:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.iframeContainer {
+  flex-grow: 1; /* Cho phép iframe chiếm hết không gian còn lại */
+  width: 100%;
+  /* Có thể thêm max-width nếu muốn giới hạn chiều rộng game */
+  /* max-width: 1200px;
+  margin: 0 auto; */
+}
+
+/* Đảm bảo iframe cũng chiếm hết không gian container của nó */
+.iframeContainer iframe {
+  display: block; /* Tránh khoảng trắng thừa */
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Card adjustments --- */
+.card {
+  /* ... (các style cũ của card) ... */
+  cursor: pointer; /* Thêm con trỏ chuột */
+}
+
+/* --- Footer adjustment --- */
+.footer {
+ /* ... (style cũ) ... */
+ position: relative; /* Đảm bảo footer không bị che khuất */
+ z-index: 5;
+}
+
+/* Điều chỉnh khi màn hình nhỏ */
+@media (max-width: 768px) {
+ .gameView {
+    padding-top: 60px; /* Tăng khoảng trống cho nút back trên mobile */
+ }
+ .backButton {
+    top: 15px;
+    left: 10px;
+    font-size: 0.9rem;
+    padding: 6px 10px;
+ }
+}
